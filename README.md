@@ -1,7 +1,7 @@
 # Cake.AWS.Route53
 Cake Build addon for managing Amazon Route53 DNS records
 
-[![Build status](https://ci.appveyor.com/api/projects/status/4ymtu0it99v31726?svg=true)](https://ci.appveyor.com/project/PhillipSharpe/cake-aws-s3)
+[![Build status](https://ci.appveyor.com/api/projects/status/ds56nw3ffa7t5bfp?svg=true)](https://ci.appveyor.com/project/PhillipSharpe/cake-aws-route53)
 
 [![cakebuild.net](https://img.shields.io/badge/WWW-cakebuild.net-blue.svg)](http://cakebuild.net/)
 
