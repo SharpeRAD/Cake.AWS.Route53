@@ -21,6 +21,7 @@
       <file src="AWSSDK.Core.dll" target="lib/net45" />
       <file src="AWSSDK.Route53.dll" target="lib/net45" />
       <file src="Cake.AWS.Route53.dll" target="lib/net45" />
+      <file src="Cake.AWS.Route53.xml" target="lib/net45" />
       <file src="LICENSE" />
    </files>
 </package>
