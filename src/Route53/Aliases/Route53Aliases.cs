@@ -7,6 +7,8 @@
 
     using Amazon.Route53;
     using Amazon.Route53.Model;
+
+    using Amazon.EC2.Util;
 #endregion
 
 
@@ -99,6 +101,21 @@ namespace Cake.AWS.Route53
         }
 
 
+
+        /// <summary>
+        /// Create or change a DNS record pointing to the current instance
+        /// </summary>
+        /// <param name="context">The cake context.</param>
+        /// <param name="hostedZoneId">The ID of the hosted zone that contains the resource record sets that you want to change</param>
+        /// <param name="name">The name of the DNS record set.</param>
+        /// <param name="type">The type of the DNS record set.</param>
+        /// <param name="settings">The <see cref="Route53Settings"/> required to upload to Amazon S3.</param>
+        [CakeMethodAlias]
+        [CakeAliasCategory("Route53")]
+        public static string CreateResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, Route53Settings settings)
+        {
+            return context.CreateManager().CreateResourceRecordSet(hostedZoneId, name, type, EC2Metadata.PrivateIpAddress, 300, settings);
+        }
 
         /// <summary>
         /// Create or change a DNS record for a hosted zone.
