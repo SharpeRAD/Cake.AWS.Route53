@@ -43,7 +43,7 @@ Cake.AWS.Route53 is available as a nuget package from the package manager consol
 Install-Package Cake.AWS.Route53
 ```
 
-or directly in your build script via a cake addin:
+or directly in your build script via a cake addin directive:
 
 ```csharp
 #addin "Cake.AWS.Route53"
