@@ -29,8 +29,8 @@ namespace Cake.AWS.Route53
 
             Route53Settings settings = new Route53Settings()
             {
-                AccessKey = environment.GetEnvironmentVariable("AWS_ACCESSKEY"),
-                SecretKey = environment.GetEnvironmentVariable("AWS_SECRETKEY")
+                AccessKey = environment.GetEnvironmentVariable("AWS_ACCESS_KEY_ID"),
+                SecretKey = environment.GetEnvironmentVariable("AWS_SECRET_ACCESS_KEY")
             };
 
 

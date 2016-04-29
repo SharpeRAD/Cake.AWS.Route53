@@ -1,3 +1,6 @@
+### New in 0.0.4 (Released 2016/04/29)
+* Match the environment variables used in the AWS SDK
+
 ### New in 0.0.3 (Released 2016/01/16)
 * Create or change a DNS record pointing to the current instance
 * Fixed SolutionInfo link
