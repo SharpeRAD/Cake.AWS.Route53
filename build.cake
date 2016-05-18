@@ -55,7 +55,7 @@ var zipPackage = buildResultDir + "/Cake-AWS-Route53-v" + semVersion + ".zip";
 // SETUP / TEARDOWN
 ///////////////////////////////////////////////////////////////////////////////
 
-Setup(() =>
+Setup(context =>
 {
     //Executed BEFORE the first task.
     Information("Building version {0} of {1}.", semVersion, appName);
@@ -68,7 +68,7 @@ Setup(() =>
     });
 });
 
-Teardown(() =>
+Teardown(context =>
 {
     // Executed AFTER the last task.
     Information("Finished building version {0} of {1}.", semVersion, appName);
@@ -179,9 +179,9 @@ Task("Copy-Files")
     CopyFileToDirectory(buildDir + "/Cake.AWS.Route53.pdb", binDir);
     CopyFileToDirectory(buildDir + "/Cake.AWS.Route53.xml", binDir);
 
-    CopyFileToDirectory("./lib/AWSSDK.Core.dll", binDir);
-    CopyFileToDirectory("./lib/AWSSDK.EC2.dll", binDir);
-    CopyFileToDirectory("./lib/AWSSDK.Route53.dll", binDir);
+    CopyFileToDirectory(buildDir + "/AWSSDK.Core.dll", binDir);
+    CopyFileToDirectory(buildDir + "/AWSSDK.EC2.dll", binDir);
+    CopyFileToDirectory(buildDir + "/AWSSDK.Route53.dll", binDir);
 
     CopyFiles(new FilePath[] { "LICENSE", "README.md", "ReleaseNotes.md" }, binDir);
 
@@ -191,9 +191,9 @@ Task("Copy-Files")
     CreateDirectory("./test/tools/Addins/Cake.AWS.Route53/lib/net45/");
 
     CopyFileToDirectory(buildDir + "/Cake.AWS.Route53.dll", "./test/tools/Addins/Cake.AWS.Route53/lib/net45/");
-    CopyFileToDirectory("./lib/AWSSDK.Core.dll", "./test/tools/Addins/Cake.AWS.Route53/lib/net45/");
-    CopyFileToDirectory("./lib/AWSSDK.EC2.dll", "./test/tools/Addins/Cake.AWS.Route53/lib/net45/");
-    CopyFileToDirectory("./lib/AWSSDK.Route53.dll", "./test/tools/Addins/Cake.AWS.Route53/lib/net45/");
+    CopyFileToDirectory(buildDir + "/AWSSDK.Core.dll", "./test/tools/Addins/Cake.AWS.Route53/lib/net45/");
+    CopyFileToDirectory(buildDir + "/AWSSDK.EC2.dll", "./test/tools/Addins/Cake.AWS.Route53/lib/net45/");
+    CopyFileToDirectory(buildDir + "/AWSSDK.Route53.dll", "./test/tools/Addins/Cake.AWS.Route53/lib/net45/");
 });
 
 Task("Zip-Files")

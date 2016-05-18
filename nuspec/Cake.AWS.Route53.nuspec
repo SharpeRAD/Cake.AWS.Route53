@@ -15,11 +15,19 @@
       <copyright>Copyright (c) Phillip Sharpe 2015</copyright>
       <releaseNotes>Initial Release</releaseNotes>
       <tags>Cake Script Build Amazon Route53 DNS</tags>
+
+       <dependencies>
+           <dependency id="Cake.Core" version="0.11.0" />
+           <dependency id="AWSSDK.Core" version="3.1.5.3" />
+           <dependency id="AWSSDK.Route53" version="3.1.4.0" />
+           <dependency id="AWSSDK.EC2" version="3.1.13.0" />
+       </dependencies>
    </metadata>
 
    <files>
       <file src="AWSSDK.Core.dll" target="lib/net45" />
       <file src="AWSSDK.Route53.dll" target="lib/net45" />
+      <file src="AWSSDK.EC2.dll" target="lib/net45" />
       <file src="Cake.AWS.Route53.dll" target="lib/net45" />
       <file src="Cake.AWS.Route53.xml" target="lib/net45" />
       <file src="LICENSE" />
