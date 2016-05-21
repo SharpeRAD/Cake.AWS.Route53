@@ -270,53 +270,53 @@ namespace Cake.AWS.Route53
             /// <param name="ttl">The time to live of the record set.</param>
             /// <param name="settings">The <see cref="Route53Settings"/> required to upload to Amazon S3.</param>
             public string CreateResourceRecordSet(string hostedZoneId, string name, RRType type, string value, long ttl, Route53Settings settings)
+            {
+                var recordSet = new ResourceRecordSet()
                 {
-                    var recordSet = new ResourceRecordSet()
+                    Name = name,
+                    TTL = ttl,
+                    Type = type,
+                    ResourceRecords = new List<ResourceRecord>
                     {
-                        Name = name,
-                        TTL = ttl,
-                        Type = type,
-                        ResourceRecords = new List<ResourceRecord>
-                        {
-                            new ResourceRecord { Value = value }
-                        }
-                    };
-
-                    var change1 = new Change()
-                    {
-                        ResourceRecordSet = recordSet,
-                        Action = ChangeAction.UPSERT
-                    };
-
-                    var changeBatch = new ChangeBatch()
-                    {
-                        Changes = new List<Change> { change1 }
-                    };
-
-                    var recordsetRequest = new ChangeResourceRecordSetsRequest()
-                    {
-                        HostedZoneId = hostedZoneId,
-                        ChangeBatch = changeBatch
-                    };
-
-
-
-                    AmazonRoute53Client client = this.GetClient(settings);
-                    ChangeResourceRecordSetsResponse response = client.ChangeResourceRecordSets(recordsetRequest);
-
-                    if (response.HttpStatusCode == HttpStatusCode.OK)
-                    {
-                        this.WaitForChange(client, response.ChangeInfo.Id, 10000, 60);
-
-                        _Log.Verbose("Updated record set");
-                        return response.ChangeInfo.Id;
+                        new ResourceRecord { Value = value }
                     }
-                    else
-                    {
-                        _Log.Error("Could not change resource records");
-                        return "";
-                    }
+                };
+
+                var change1 = new Change()
+                {
+                    ResourceRecordSet = recordSet,
+                    Action = ChangeAction.UPSERT
+                };
+
+                var changeBatch = new ChangeBatch()
+                {
+                    Changes = new List<Change> { change1 }
+                };
+
+                var recordsetRequest = new ChangeResourceRecordSetsRequest()
+                {
+                    HostedZoneId = hostedZoneId,
+                    ChangeBatch = changeBatch
+                };
+
+
+
+                AmazonRoute53Client client = this.GetClient(settings);
+                ChangeResourceRecordSetsResponse response = client.ChangeResourceRecordSets(recordsetRequest);
+
+                if (response.HttpStatusCode == HttpStatusCode.OK)
+                {
+                    this.WaitForChange(client, response.ChangeInfo.Id, 10000, 60);
+
+                    _Log.Verbose("Updated record set");
+                    return response.ChangeInfo.Id;
                 }
+                else
+                {
+                    _Log.Error("Could not change resource records");
+                    return "";
+                }
+            }
 
             /// <summary>
             /// Delete a DNS record for a hosted zone.
@@ -375,30 +375,30 @@ namespace Cake.AWS.Route53
             /// <param name="hostedZoneId">The ID of the hosted zone whos record sets you want to list</param>
             /// <param name="settings">The <see cref="Route53Settings"/> required to connect to Route53.</param>
             public IList<ResourceRecordSet> GetResourceRecordSets(string hostedZoneId, Route53Settings settings)
+            {
+                if (String.IsNullOrEmpty(hostedZoneId))
                 {
-                    if (String.IsNullOrEmpty(hostedZoneId))
-                    {
-                        throw new ArgumentNullException("hostedZoneId");
-                    }
-
-
-
-                    ListResourceRecordSetsRequest request = new ListResourceRecordSetsRequest(hostedZoneId);
-
-                    AmazonRoute53Client client = this.GetClient(settings);
-                    ListResourceRecordSetsResponse response = client.ListResourceRecordSets(request);
-
-                    if (response.HttpStatusCode == HttpStatusCode.OK)
-                    {
-                        _Log.Verbose("Listing record sets");
-                        return response.ResourceRecordSets;
-                    }
-                    else
-                    {
-                        _Log.Error("Could not list record sets");
-                        return null;
-                    }
+                    throw new ArgumentNullException("hostedZoneId");
                 }
+
+
+
+                ListResourceRecordSetsRequest request = new ListResourceRecordSetsRequest(hostedZoneId);
+
+                AmazonRoute53Client client = this.GetClient(settings);
+                ListResourceRecordSetsResponse response = client.ListResourceRecordSets(request);
+
+                if (response.HttpStatusCode == HttpStatusCode.OK)
+                {
+                    _Log.Verbose("Listing record sets");
+                    return response.ResourceRecordSets;
+                }
+                else
+                {
+                    _Log.Error("Could not list record sets");
+                    return null;
+                }
+            }
         #endregion
     }
 }
