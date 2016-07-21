@@ -30,6 +30,7 @@ Cake Build addin for managing Amazon Route53 DNS records
 * Create Resource RecordSet
 * Delete Resource RecordSet
 * Get Resource RecordSets
+* Uses AWS fallback credentials (app.config / web.config file, SDK store or credentials file, environment variables, instance profile)
 
 
 
