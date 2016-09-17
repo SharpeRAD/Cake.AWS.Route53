@@ -65,20 +65,29 @@ namespace Cake.AWS.Route53
                 {
                     throw new ArgumentNullException("settings");
                 }
-                if (String.IsNullOrEmpty(settings.AccessKey))
-                {
-                    throw new ArgumentNullException("settings.AccessKey");
-                }
-                if (String.IsNullOrEmpty(settings.SecretKey))
-                {
-                    throw new ArgumentNullException("settings.SecretKey");
-                }
+                
                 if (settings.Region == null)
                 {
                     throw new ArgumentNullException("settings.Region");
                 }
 
-                return new AmazonRoute53Client(settings.AccessKey, settings.SecretKey, settings.Region);
+                if (settings.Credentials == null)
+                {
+                    if (String.IsNullOrEmpty(settings.AccessKey))
+                    {
+                        throw new ArgumentNullException("settings.AccessKey");
+                    }
+                    if (String.IsNullOrEmpty(settings.SecretKey))
+                    {
+                        throw new ArgumentNullException("settings.SecretKey");
+                    }
+
+                    return new AmazonRoute53Client(settings.AccessKey, settings.SecretKey, settings.Region);
+                }
+                else
+                {
+                    return new AmazonRoute53Client(settings.Credentials, settings.Region);
+                }
             }
 
             private bool WaitForChange(AmazonRoute53Client client, string id, int interval = 10000, int maxIterations = 60)

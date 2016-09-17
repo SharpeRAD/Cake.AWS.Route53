@@ -1,3 +1,6 @@
+### New in 0.0.6 (Released 2016/09/17)
+* Correct use of fallback credentials
+
 ### New in 0.0.5 (Released 2016/05/18)
 * Use AWS FallbackCredentialsFactory
 * Add nuget dependencies

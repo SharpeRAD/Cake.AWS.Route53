@@ -1,5 +1,6 @@
 ﻿#region Using Statements
     using Amazon;
+    using Amazon.Runtime;
 #endregion
 
 
@@ -35,6 +36,8 @@ namespace Cake.AWS.Route53
             /// The AWS Secret Access Key.
             /// </summary>
             public string SecretKey { get; set; }
+                
+            internal AWSCredentials Credentials { get; set; }
 
 
 
