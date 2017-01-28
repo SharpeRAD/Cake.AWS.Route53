@@ -1,3 +1,6 @@
+### New in 0.0.7 (Released 2017/01/28)
+* Add necessary parameters to DeleteResourceRecordSet
+
 ### New in 0.0.6 (Released 2016/09/17)
 * Correct use of fallback credentials
 
