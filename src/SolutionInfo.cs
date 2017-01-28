@@ -6,8 +6,8 @@
 using System.Reflection;
 
 [assembly: AssemblyProduct("Cake.AWS.Route53")]
-[assembly: AssemblyVersion("0.0.5")]
-[assembly: AssemblyFileVersion("0.0.5")]
-[assembly: AssemblyInformationalVersion("0.0.5")]
-[assembly: AssemblyCopyright("Copyright (c) 2015 - 2016 Phillip Sharpe")]
+[assembly: AssemblyVersion("0.0.6")]
+[assembly: AssemblyFileVersion("0.0.6")]
+[assembly: AssemblyInformationalVersion("0.0.6")]
+[assembly: AssemblyCopyright("Copyright (c) 2015 - 2017 Phillip Sharpe")]
 
