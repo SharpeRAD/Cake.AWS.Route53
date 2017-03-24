@@ -8,7 +8,9 @@
     using Amazon.Route53;
     using Amazon.Route53.Model;
 
-    using Amazon.EC2.Util;
+    using Amazon.EC2;
+    using Amazon.EC2.Model;
+    using Amazon.Util;
 #endregion
 
 
@@ -114,7 +116,7 @@ namespace Cake.AWS.Route53
         [CakeAliasCategory("Route53")]
         public static string CreateResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, Route53Settings settings)
         {
-            return context.CreateManager().CreateResourceRecordSet(hostedZoneId, name, type, EC2Metadata.PrivateIpAddress, 300, settings);
+            return context.CreateManager().CreateResourceRecordSet(hostedZoneId, name, type, EC2InstanceMetadata.PrivateIpAddress, 300, settings);
         }
 
         /// <summary>
