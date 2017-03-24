@@ -1,26 +1,29 @@
+### New in 0.0.8 (Released 2017/03/24)
+* [Improvement] Update Cake.Core reference
+
 ### New in 0.0.7 (Released 2017/01/28)
-* Add necessary parameters to DeleteResourceRecordSet
+* [Improvement] Add necessary parameters to DeleteResourceRecordSet
 
 ### New in 0.0.6 (Released 2016/09/17)
-* Correct use of fallback credentials
+* [Bug] Correct use of fallback credentials
 
 ### New in 0.0.5 (Released 2016/05/18)
-* Use AWS FallbackCredentialsFactory
-* Add nuget dependencies
-* Update all packages
-* Setup and Teardown with context
+* [Improvement] Use AWS FallbackCredentialsFactory
+* [Improvement] Add nuget dependencies
+* [Improvement] Update all packages
+* [Improvement] etup and Teardown with context
 
 ### New in 0.0.4 (Released 2016/04/29)
-* Match the environment variables used in the AWS SDK
+* [Bug] Match the environment variables used in the AWS SDK
 
 ### New in 0.0.3 (Released 2016/01/16)
-* Create or change a DNS record pointing to the current instance
-* Fixed SolutionInfo link
+* [Feature] Create or change a DNS record pointing to the current instance
+* [Improvement] Fixed SolutionInfo link
 
 ### New in 0.0.2 (Released 2016/01/07)
-* ReadMe tweaks
-* Include documentation in Nuget
-* Check Slack token exists in build
+* [Improvement] ReadMe tweaks
+* [Improvement] Include documentation in Nuget
+* [Bug] Check Slack token exists in build
 
 ### New in 0.0.1 (Released 2016/01/06)
-* First release.
+* [Feature] First release.

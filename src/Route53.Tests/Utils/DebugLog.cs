@@ -28,6 +28,7 @@ namespace Cake.AWS.Route53.Tests
         public Verbosity Verbosity
         {
             get { return Verbosity.Diagnostic; }
+            set { }
         }
 
 
