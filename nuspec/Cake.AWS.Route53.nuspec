@@ -20,14 +20,12 @@
             <dependency id="Cake.Core" version="0.11.0" />
             <dependency id="AWSSDK.Core" version="3.1.5.3" />
             <dependency id="AWSSDK.Route53" version="3.1.4.0" />
-            <dependency id="AWSSDK.EC2" version="3.1.13.0" />
         </dependencies>
     </metadata>
 
     <files>
         <file src="net46/AWSSDK.Core.dll" target="lib/net46" />
         <file src="net46/AWSSDK.Route53.dll" target="lib/net46" />
-        <file src="net46/AWSSDK.EC2.dll" target="lib/net46" />
 
         <file src="net46/Cake.AWS.Route53.dll" target="lib/net46" />
         <file src="net46/Cake.AWS.Route53.xml" target="lib/net46" />
