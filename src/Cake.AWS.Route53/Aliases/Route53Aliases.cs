@@ -1,16 +1,16 @@
 ﻿#region Using Statements
-    using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
-    using Cake.Core;
-    using Cake.Core.IO;
-    using Cake.Core.Annotations;
+using Cake.Core;
+using Cake.Core.IO;
+using Cake.Core.Annotations;
 
-    using Amazon.Route53;
-    using Amazon.Route53.Model;
+using Amazon.Route53;
+using Amazon.Route53.Model;
 
-    using Amazon.EC2;
-    using Amazon.EC2.Model;
-    using Amazon.Util;
+using Amazon.Util;
 #endregion
 
 
@@ -41,9 +41,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to connect to Route53.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static string CreateHostedZone(this ICakeContext context, string domain, Route53Settings settings)
+        public static async Task<string> CreateHostedZone(this ICakeContext context, string domain, Route53Settings settings)
         {
-            return context.CreateManager().CreateHostedZone(domain, "", null, settings);
+            return await context.CreateManager().CreateHostedZone(domain, "", null, settings);
         }
 
         /// <summary>
@@ -57,9 +57,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to connect to Route53.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static string CreateHostedZone(this ICakeContext context, string domain, string vpc, VPCRegion region, Route53Settings settings)
+        public static async Task<string> CreateHostedZone(this ICakeContext context, string domain, string vpc, VPCRegion region, Route53Settings settings)
         {
-            return context.CreateManager().CreateHostedZone(domain, vpc, region, settings);
+            return await context.CreateManager().CreateHostedZone(domain, vpc, region, settings);
         }
 
         /// <summary>
@@ -70,9 +70,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to connect to Route53.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static bool DeleteHostedZone(this ICakeContext context, string hostedZoneId, Route53Settings settings)
+        public static async Task<bool> DeleteHostedZone(this ICakeContext context, string hostedZoneId, Route53Settings settings)
         {
-            return context.CreateManager().DeleteHostedZone(hostedZoneId, settings);
+            return await context.CreateManager().DeleteHostedZone(hostedZoneId, settings);
         }
 
 
@@ -85,9 +85,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to connect to Route53.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static HostedZone GetHostedZone(this ICakeContext context, string domain, Route53Settings settings)
+        public static async Task<HostedZone> GetHostedZone(this ICakeContext context, string domain, Route53Settings settings)
         {
-            return context.CreateManager().GetHostedZone(domain, settings);
+            return await context.CreateManager().GetHostedZone(domain, settings);
         }
 
         /// <summary>
@@ -97,9 +97,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to connect to Route53.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static IList<HostedZone> GetHostedZones(this ICakeContext context, Route53Settings settings)
+        public static async Task<IList<HostedZone>> GetHostedZones(this ICakeContext context, Route53Settings settings)
         {
-            return context.CreateManager().GetHostedZones(settings);
+            return await context.CreateManager().GetHostedZones(settings);
         }
 
 
@@ -114,9 +114,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to upload to Amazon S3.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static string CreateResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, Route53Settings settings)
+        public static async Task<string> CreateResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, Route53Settings settings)
         {
-            return context.CreateManager().CreateResourceRecordSet(hostedZoneId, name, type, EC2InstanceMetadata.PrivateIpAddress, 300, settings);
+            return await context.CreateManager().CreateResourceRecordSet(hostedZoneId, name, type, EC2InstanceMetadata.PrivateIpAddress, 300, settings);
         }
 
         /// <summary>
@@ -130,9 +130,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to upload to Amazon S3.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static string CreateResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, string value, Route53Settings settings)
+        public static async Task<string> CreateResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, string value, Route53Settings settings)
         {
-            return context.CreateManager().CreateResourceRecordSet(hostedZoneId, name, type, value, 300, settings);
+            return await context.CreateManager().CreateResourceRecordSet(hostedZoneId, name, type, value, 300, settings);
         }
 
         /// <summary>
@@ -147,9 +147,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to upload to Amazon S3.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static string CreateResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, string value, long ttl, Route53Settings settings)
+        public static async Task<string> CreateResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, string value, long ttl, Route53Settings settings)
         {
-            return context.CreateManager().CreateResourceRecordSet(hostedZoneId, name, type, value, ttl, settings);
+            return await context.CreateManager().CreateResourceRecordSet(hostedZoneId, name, type, value, ttl, settings);
         }
 
         /// <summary>
@@ -164,9 +164,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to upload to Amazon S3.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static string DeleteResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, string value, long ttl, Route53Settings settings)
+        public static async Task<string> DeleteResourceRecordSet(this ICakeContext context, string hostedZoneId, string name, RRType type, string value, long ttl, Route53Settings settings)
         {
-            return context.CreateManager().DeleteResourceRecordSet(hostedZoneId, name, type, value, ttl, settings);
+            return await context.CreateManager().DeleteResourceRecordSet(hostedZoneId, name, type, value, ttl, settings);
         }
 
         /// <summary>
@@ -177,9 +177,9 @@ namespace Cake.AWS.Route53
         /// <param name="settings">The <see cref="Route53Settings"/> required to connect to Route53.</param>
         [CakeMethodAlias]
         [CakeAliasCategory("Route53")]
-        public static IList<ResourceRecordSet> GetResourceRecordSets(this ICakeContext context, string hostedZoneId, Route53Settings settings)
+        public static async Task<IList<ResourceRecordSet>> GetResourceRecordSets(this ICakeContext context, string hostedZoneId, Route53Settings settings)
         {
-            return context.CreateManager().GetResourceRecordSets(hostedZoneId, settings);
+            return await context.CreateManager().GetResourceRecordSets(hostedZoneId, settings);
         }
     }
 }

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AssemblyTitle>Cake.AWS.Route53</AssemblyTitle>
+        <AssemblyName>Cake.AWS.Route53</AssemblyName>
+        <PackageId>Cake.AWS.Route53</PackageId>
+        <OutputType>Library</OutputType>
+
+        <TargetFrameworks>net46;netstandard1.6;</TargetFrameworks>
+
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+        <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+        <GenerateAssemblyCopyrightAttribute>false</GenerateAssemblyCopyrightAttribute>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <DocumentationFile>bin\Debug\net46\Cake.AWS.Route53.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Cake.Core" Version="0.22.0" />
+
+        <PackageReference Include="AWSSDK.Core" Version="3.3.17.9" />
+        <PackageReference Include="AWSSDK.Route53" Version="3.3.9" />
+    </ItemGroup>
+</Project>

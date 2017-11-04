@@ -1,9 +1,9 @@
 ﻿#region Using Statements
-    using System;
-    using System.Diagnostics;
-    using System.Collections.Generic;
+using System;
+using System.Diagnostics;
+using System.Collections.Generic;
 
-    using Cake.Core.Diagnostics;
+using Cake.Core.Diagnostics;
 #endregion
 
 

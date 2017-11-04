@@ -1,10 +1,10 @@
 ﻿#region Using Statements
-    using System;
+using System;
 
-    using Cake.Core;
+using Cake.Core;
 
-    using Amazon;
-    using Amazon.Runtime;
+using Amazon;
+using Amazon.Runtime;
 #endregion
 
 

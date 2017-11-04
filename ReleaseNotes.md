@@ -1,3 +1,7 @@
+### New in 0.1.0 (Released 2017/10/25)
+* [Improvement] Move to net46 and netstandard1.6
+* [Improvement] Change to async methods
+
 ### New in 0.0.8 (Released 2017/03/24)
 * [Improvement] Update Cake.Core reference
 

@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-      <id>Cake.AWS.Route53</id>
-      <version>0.0.0</version>
-      <authors>Phillip Sharpe</authors>
-      <owners>Phillip Sharpe</owners>
-      <title>Cake.AWS.Route53</title>
-      <description>Cake Build addon for managing Amazon Route53 DNS.</description>
-      <summary>Amazon Route53 addon for cake build.</summary>
-      <licenseUrl>https://github.com/SharpeRAD/Cake.AWS.Route53/LICENSE</licenseUrl>
-      <projectUrl>https://github.com/SharpeRAD/Cake.AWS.Route53</projectUrl>
-      <iconUrl>https://raw.githubusercontent.com/cake-build/graphics/master/png/cake-medium.png</iconUrl>
-      <requireLicenseAcceptance>false</requireLicenseAcceptance>
-      <copyright>Copyright (c) Phillip Sharpe 2015</copyright>
-      <releaseNotes>Initial Release</releaseNotes>
-      <tags>Cake Script Build Amazon Route53 DNS</tags>
+    <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+        <id>Cake.AWS.Route53</id>
+        <version>0.0.0</version>
+        <authors>Phillip Sharpe</authors>
+        <owners>Phillip Sharpe</owners>
+        <title>Cake.AWS.Route53</title>
+        <description>Cake Build addon for managing Amazon Route53 DNS.</description>
+        <summary>Amazon Route53 addon for cake build.</summary>
+        <licenseUrl>https://github.com/SharpeRAD/Cake.AWS.Route53/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/SharpeRAD/Cake.AWS.Route53</projectUrl>
+        <iconUrl>https://cdn.rawgit.com/cake-contrib/graphics/a5cf0f881c390650144b2243ae551d5b9f836196/png/cake-contrib-medium.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <copyright>Copyright (c) Phillip Sharpe 2015</copyright>
+        <releaseNotes>Initial Release</releaseNotes>
+        <tags>Cake Script Build Amazon Route53 DNS</tags>
 
-       <dependencies>
-           <dependency id="Cake.Core" version="0.11.0" />
-           <dependency id="AWSSDK.Core" version="3.1.5.3" />
-           <dependency id="AWSSDK.Route53" version="3.1.4.0" />
-           <dependency id="AWSSDK.EC2" version="3.1.13.0" />
-       </dependencies>
-   </metadata>
+        <dependencies>
+            <dependency id="Cake.Core" version="0.11.0" />
+            <dependency id="AWSSDK.Core" version="3.1.5.3" />
+            <dependency id="AWSSDK.Route53" version="3.1.4.0" />
+            <dependency id="AWSSDK.EC2" version="3.1.13.0" />
+        </dependencies>
+    </metadata>
 
-   <files>
-      <file src="AWSSDK.Core.dll" target="lib/net45" />
-      <file src="AWSSDK.Route53.dll" target="lib/net45" />
-      <file src="AWSSDK.EC2.dll" target="lib/net45" />
-      <file src="Cake.AWS.Route53.dll" target="lib/net45" />
-      <file src="Cake.AWS.Route53.xml" target="lib/net45" />
-      <file src="LICENSE" />
-   </files>
+    <files>
+        <file src="net46/AWSSDK.Core.dll" target="lib/net46" />
+        <file src="net46/AWSSDK.Route53.dll" target="lib/net46" />
+        <file src="net46/AWSSDK.EC2.dll" target="lib/net46" />
+
+        <file src="net46/Cake.AWS.Route53.dll" target="lib/net46" />
+        <file src="net46/Cake.AWS.Route53.xml" target="lib/net46" />
+        <file src="net46/Cake.AWS.Route53.pdb" target="lib/net46" />
+
+        <file src="netstandard1.6/Cake.AWS.Route53.dll" target="lib/netstandard1.6" />
+        <file src="netstandard1.6/Cake.AWS.Route53.xml" target="lib/netstandard1.6" />
+        <file src="netstandard1.6/Cake.AWS.Route53.pdb" target="lib/netstandard1.6" />
+        <file src="netstandard1.6/Cake.AWS.Route53.deps.json" target="lib/netstandard1.6" />
+
+        <file src="LICENSE" />
+    </files>
 </package>

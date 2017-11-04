@@ -31,9 +31,9 @@ Setup(context =>
 
 Task("Create-Resource-RecordSet")
     .Description("Create or change a DNS record for a hosted zone")
-    .Does(() =>
+    .Does(async () =>
 {
-    CreateResourceRecordSet("hostedZoneId", "wwww", RRType.A, "192.168.42.123", 3600, new Route53Settings()
+    await CreateResourceRecordSet("hostedZoneId", "wwww", RRType.A, "192.168.42.123", 3600, new Route53Settings()
     {
         AccessKey = "blah",
         SecretKey = "blah",

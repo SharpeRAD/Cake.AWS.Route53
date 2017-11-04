@@ -59,9 +59,9 @@ or directly in your build script via a cake addin directive:
 
 Task("Create-Hosted-Zone")
     .Description("Creates a hosted zone for a particular domain")
-    .Does(() =>
+    .Does(async () =>
 {
-    CreateHostedZone("test.com", new Route53Settings()
+    await CreateHostedZone("test.com", new Route53Settings()
     {
         AccessKey = "blah",
         SecretKey = "blah",
@@ -71,9 +71,9 @@ Task("Create-Hosted-Zone")
 
 Task("Create-Resource-RecordSet")
     .Description("Create or change a DNS record for a hosted zone")
-    .Does(() =>
+    .Does(async () =>
 {
-    CreateResourceRecordSet("hostedZoneId", "wwww", RRType.A, "192.168.42.123", 3600, new Route53Settings()
+    await CreateResourceRecordSet("hostedZoneId", "wwww", RRType.A, "192.168.42.123", 3600, new Route53Settings()
     {
         AccessKey = "blah",
         SecretKey = "blah",
