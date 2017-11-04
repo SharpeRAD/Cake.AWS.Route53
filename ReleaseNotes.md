@@ -1,4 +1,7 @@
-### New in 0.1.0 (Released 2017/10/25)
+### New in 0.1.1 (Released 2017/11/04)
+* [Bug] Incorrect nuspec reference 
+
+### New in 0.1.0 (Released 2017/11/04)
 * [Improvement] Move to net46 and netstandard1.6
 * [Improvement] Change to async methods
 

@@ -17,9 +17,9 @@
         <tags>Cake Script Build Amazon Route53 DNS</tags>
 
         <dependencies>
-            <dependency id="Cake.Core" version="0.11.0" />
-            <dependency id="AWSSDK.Core" version="3.1.5.3" />
-            <dependency id="AWSSDK.Route53" version="3.1.4.0" />
+            <dependency id="Cake.Core" version="0.22.0" />
+            <dependency id="AWSSDK.Core" version="3.3.17.9" />
+            <dependency id="AWSSDK.Route53" version="3.3.9" />
         </dependencies>
     </metadata>
 
