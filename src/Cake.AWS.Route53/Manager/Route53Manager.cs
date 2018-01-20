@@ -83,7 +83,14 @@ namespace Cake.AWS.Route53
                     throw new ArgumentNullException("settings.SecretKey");
                 }
 
-                return new AmazonRoute53Client(settings.AccessKey, settings.SecretKey, settings.Region);
+                if (!String.IsNullOrEmpty(settings.SessionToken))
+                {
+                    return new AmazonRoute53Client(settings.AccessKey, settings.SecretKey, settings.SessionToken, settings.Region);
+                }
+                else
+                {
+                    return new AmazonRoute53Client(settings.AccessKey, settings.SecretKey, settings.Region);
+                }
             }
             else
             {

@@ -47,6 +47,27 @@ namespace Cake.AWS.Route53
             return settings;
         }
 
+        /// <summary>
+        /// Specifies the AWS Session Token to use as credentials.
+        /// </summary>
+        /// <param name="settings">The Route53 settings.</param>
+        /// <param name="token">The AWS Session Token.</param>
+        /// <returns>The same <see cref="Route53Settings"/> instance so that multiple calls can be chained.</returns>
+        public static Route53Settings SetSessionToken(this Route53Settings settings, string token)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
+            if (string.IsNullOrEmpty(token))
+            {
+                throw new ArgumentNullException("token");
+            }
+
+            settings.SessionToken = token;
+            return settings;
+        }
+
 
 
         /// <summary>

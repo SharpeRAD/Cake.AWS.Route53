@@ -1,3 +1,6 @@
+### New in 0.1.2 (Released 2018/01/20)
+* [Improvement] Add SessionToken to settings
+
 ### New in 0.1.1 (Released 2017/11/04)
 * [Bug] Incorrect nuspec reference 
 
