@@ -1,3 +1,6 @@
+### New in 0.1.3 (Released 2018/04/15)
+* [Improvement] Update to Cake.Core v0.26
+
 ### New in 0.1.2 (Released 2018/01/20)
 * [Improvement] Add SessionToken to settings
 

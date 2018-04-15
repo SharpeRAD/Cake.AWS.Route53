@@ -17,7 +17,7 @@
         <tags>Cake Script Build Amazon Route53 DNS</tags>
 
         <dependencies>
-            <dependency id="Cake.Core" version="0.22.0" />
+            <dependency id="Cake.Core" version="0.26.0" />
             <dependency id="AWSSDK.Core" version="3.3.17.9" />
             <dependency id="AWSSDK.Route53" version="3.3.9" />
         </dependencies>
@@ -31,10 +31,10 @@
         <file src="net46/Cake.AWS.Route53.xml" target="lib/net46" />
         <file src="net46/Cake.AWS.Route53.pdb" target="lib/net46" />
 
-        <file src="netstandard1.6/Cake.AWS.Route53.dll" target="lib/netstandard1.6" />
-        <file src="netstandard1.6/Cake.AWS.Route53.xml" target="lib/netstandard1.6" />
-        <file src="netstandard1.6/Cake.AWS.Route53.pdb" target="lib/netstandard1.6" />
-        <file src="netstandard1.6/Cake.AWS.Route53.deps.json" target="lib/netstandard1.6" />
+        <file src="netstandard2.0/Cake.AWS.Route53.dll" target="lib/netstandard2.0" />
+        <file src="netstandard2.0/Cake.AWS.Route53.xml" target="lib/netstandard2.0" />
+        <file src="netstandard2.0/Cake.AWS.Route53.pdb" target="lib/netstandard2.0" />
+        <file src="netstandard2.0/Cake.AWS.Route53.deps.json" target="lib/netstandard2.0" />
 
         <file src="LICENSE" />
     </files>
