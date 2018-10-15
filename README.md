@@ -37,6 +37,7 @@ Cake Build addin for managing Amazon Route53 DNS records
 ## Referencing
 
 [![NuGet Version](http://img.shields.io/nuget/v/Cake.AWS.Route53.svg?style=flat)](https://www.nuget.org/packages/Cake.AWS.Route53/)
+[![NuGet Downloads](http://img.shields.io/nuget/dt/Cake.AWS.Route53.svg?style=flat)](https://www.nuget.org/packages/Cake.AWS.Route53/)
 
 Cake.AWS.Route53 is available as a nuget package from the package manager console:
 
